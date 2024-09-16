@@ -1,0 +1,462 @@
+{
+	"info": {
+		"_postman_id": "e0adeb0e-bb60-4a10-804f-5c4c41d1cf43",
+		"name": "Project 4",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21095660"
+	},
+	"item": [
+		{
+			"name": "get all products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/categories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get products by category id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/products-by-category/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products-by-category",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get product by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/products/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productName",
+							"value": "test12331133555666677",
+							"type": "text"
+						},
+						{
+							"key": "categoryId",
+							"value": "6",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "123",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/laav/Downloads/images project 4/Cleaning products/bath soap.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update full product",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productName",
+							"value": "qwdqwd",
+							"type": "text"
+						},
+						{
+							"key": "categoryId",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "231",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/Users/laav/Downloads/images project 4/Cleaning products/cloths.jpeg"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update partial product",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "productName",
+							"value": "21wqeqqwqe",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/products/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get image by image name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/products/images/ec589a3c-c1be-4e2e-bc22-4b6d255d75c2.jpeg",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"products",
+						"images",
+						"ec589a3c-c1be-4e2e-bc22-4b6d255d75c2.jpeg"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/orders",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get open shopping cart by user id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJ1c2VySWQiOjMsImZpcnN0TmFtZSI6IklkYW4iLCJsYXN0TmFtZSI6IkxhYXYiLCJlbWFpbCI6ImlkYW5sYWF2LjEyM0BnbWFpbC5jb20iLCJpZCI6MTIzLCJwYXNzd29yZCI6IjQ3NTU5NDY1OGVlMjY3ZWQzODA0MmNkNTMyNDNhNmU4ODcwYTJlM2YxZjY4Yjc4YjUzN2NhZDhjZGRmZDZkN2JhOTI0ZGZkNjE3ZGEyMWYxMDI2OGUzZDk5MzhiMTk2ZGI4YzhkYzFhODZjYzU3OGQ5OTlmOWFjN2IyMGE3ZTc3IiwiY2l0eSI6IlBldGFoIFRpa3ZhIiwic3RyZWV0IjoiWWVmZSBOb2YgNzgiLCJyb2xlIjoiVXNlciJ9XSwiaWF0IjoxNjU3ODc4MDcxLCJleHAiOjE2NjIxOTgwNzF9.voulBAdNf2kJpnnF4OeD1hHNl_Wjnbf6cH_jqKHXW2E",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/open-shopping-cart-by-user-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"open-shopping-cart-by-user-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get close shopping cart by user id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjpbeyJ1c2VySWQiOjIsImZpcnN0TmFtZSI6IklkYW4iLCJsYXN0TmFtZSI6IkxhYXYiLCJlbWFpbCI6ImlkYW5sYWF2LjEyQGdtYWlsLmNvbSIsImlkIjoxMiwicGFzc3dvcmQiOiI0NzU1OTQ2NThlZTI2N2VkMzgwNDJjZDUzMjQzYTZlODg3MGEyZTNmMWY2OGI3OGI1MzdjYWQ4Y2RkZmQ2ZDdiYTkyNGRmZDYxN2RhMjFmMTAyNjhlM2Q5OTM4YjE5NmRiOGM4ZGMxYTg2Y2M1NzhkOTk5ZjlhYzdiMjBhN2U3NyIsImNpdHkiOiJQZXRhaCBUaWt2YSIsInN0cmVldCI6IlllZmUgTm9mIDc4Iiwicm9sZSI6IlVzZXIifV0sImlhdCI6MTY1Nzg3NzY3OCwiZXhwIjoxNjYyMTk3Njc4fQ.2H_V26jpzOBtSScMrSAjYfHFeviUaN8ruYwjts6IJYU",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/close-shopping-cart-by-user-id",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"close-shopping-cart-by-user-id"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get trolley items by shopping cart id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3001/api/trolley-items-by-shopping-cart/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"trolley-items-by-shopping-cart",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "firstName",
+							"value": "Idan",
+							"type": "text"
+						},
+						{
+							"key": "lastName",
+							"value": "Laav",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "idanlaav.12354@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "id",
+							"value": "123456789",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "Petah Tikva",
+							"type": "text"
+						},
+						{
+							"key": "street",
+							"value": "Yefe Nof 78",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/register",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "idanlaav.123@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "123456",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:3001/api/auth/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3001",
+					"path": [
+						"api",
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
