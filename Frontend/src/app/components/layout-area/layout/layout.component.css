@@ -1,0 +1,86 @@
+.layout {
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-rows: 12% 81% 7%;
+}
+
+.layout > header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: auto;
+    border: 1px solid black;
+    color: brown;
+    font-size: xx-large;
+    font-weight: 500;
+}
+
+.layout> footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    border: 1px solid black;
+    font-size: large;
+    font-weight: 600;
+    color: rgb(107, 182, 207);
+}
+
+.layout > main {
+    overflow: auto;
+    border: 1px solid black;
+}
+
+.layout, .layout > * {
+    border: 1px solid black;
+    border: 1px solid black;
+
+}
+
+.logo {
+    width: 20%;
+    height: 100%;
+}
+
+.subjectContactDetails {
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+    color: rgb(117, 195, 244);
+    font-size: 50%;
+}
+
+.mainContactDetails {
+    border: none;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+    color: rgb(117, 195, 244);
+    font-size: 50%;
+}
+
+.details {
+    margin-right: 5px;
+}
+
+.welcomeMessage {
+    margin-top: 10px;
+    font-size: 16px !important;
+    color: brown;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+}
+
+.toLeft {
+    text-align: left;
+}
+
+.subject {
+    display: flex;
+    flex-direction: column;
+}

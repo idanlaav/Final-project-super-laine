@@ -1,0 +1,56 @@
+.registerStepOneForm {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.warningValidate {
+    color: red;
+    font-size: small;
+}
+
+.registerStepTwoForm {
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.removeCssButton {
+    margin-left: 0px;
+    background: transparent;
+    color: #1100ff;
+    border: none;
+    font-size: medium;
+}
+
+h2 {
+    color: brown;
+    padding-bottom: 25px;
+}
+
+form>* {
+    margin: 5px;
+}
+
+input {
+    width: 17vw;
+}
+
+select {
+    width: 17.5vw;
+    height: 2.1vw;
+}
+
+label {
+    font-family: fantasy;
+}
+
+p {
+    font-family: fantasy;
+}

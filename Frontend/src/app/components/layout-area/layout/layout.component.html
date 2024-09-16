@@ -1,0 +1,20 @@
+<div class="layout">
+    
+    <header>
+        <img class="logo" src="../../../../assets/super laine logo.png">
+        <div class="subject">
+            Super Laine
+        </div>
+        <div class="details">
+            <div class="subjectContactDetails">Contact:</div>
+            <div class="mainContactDetails">052-5349228, idanlaav.1@gmail.com</div>
+            <div class="welcomeMessage" *ngIf="userFullName == null">Hello guest</div>
+            <div class="welcomeMessage toLeft" *ngIf="userFullName != null">Hello {{userFullName}}</div>
+        </div>
+    </header>
+    
+    <main><router-outlet></router-outlet></main>
+    
+    <footer>All Rights Reserved &copy; To Idan Laav</footer>
+
+</div>

@@ -1,0 +1,178 @@
+.splitPage {
+    display: inline-flex;
+    height: 100%;
+    overflow: scroll;
+}
+
+.heightCheck {
+    max-height: 100%;
+    overflow: scroll;
+}
+
+div {
+    height: 100%;
+    width: 100%;
+}
+
+.logoutBtn {
+    position: absolute;
+    top: 8%;
+    right: 0%;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+    color: brown;
+}
+
+.sidebarBtn {
+    position: fixed;
+    top: 6.6%;
+    left: 1%;
+    font-size: 5vh;
+    cursor: pointer;
+    background: none;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.sidebarClose {
+    height: 100%;
+    width: 0;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.sidebarOpen {
+    height: 100%;
+    position: static;
+    z-index: 1;
+    background-color: rgb(178, 225, 255);
+    overflow-x: hidden;
+    transition: 0.5s;
+    width: 350px;
+}
+
+.ulWithSidebar {
+    display: inline-flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.ulWithoutSidebar {
+    display: inline-flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    margin: 0 2%;
+    margin-bottom: 8px;
+    margin-top: 5px;
+}
+
+li {
+    float: left;
+    padding-top: 5px;
+}
+
+li a {
+    display: flex;
+    justify-content: center;
+    color: brown;
+    text-align: center;
+    padding: 0px 18px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+li a:hover {
+    background-color: rgb(227, 164, 164);
+    border-radius: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: brown;
+}
+
+.cartCss {
+    margin-left: 5px;
+    max-width: 96%;
+    max-height: 76%;
+    overflow: scroll;
+}
+
+.productsCenter {
+    justify-content: center;
+    text-align: center;
+}
+
+.footerCart {
+    display: inline-flex;
+    font-size: larger;
+    margin: auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    color: brown;
+    height: 40px;
+    justify-content: space-around;
+    align-items: center;
+    overflow: unset;
+    flex-wrap: wrap;
+    margin-top: 7px;
+}
+
+.searchBox {
+    display: inline-block;
+    position: fixed;
+    top: 8.5%;
+    left: 6.5%;
+    width: 18%;
+    height: 2%;
+}
+
+.searchBtn {
+    display: inline-block;
+    margin-left: 5px;
+    color: brown;
+    font-size: 2vh;
+}
+
+.searchText {
+    border: 1.2px solid black;
+    color: brown;
+    width: 60%;
+    height: 100%;
+}
+
+.deleteAllItems {
+    margin-left: 5px;
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+
+.orderPageBtn {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-decoration: underline;
+}
+
+.emptyCart {
+    height: 77%;
+}
+

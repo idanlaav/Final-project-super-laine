@@ -1,0 +1,80 @@
+<button class="logoutBtn" (click)="logout()">👋🏻 Logout</button>
+<input class="searchItem" type="text" (ngModelChange)="search($event)" [ngModel]="searchValue">
+
+
+<div *ngIf="printDisplay == true">
+    <div class="printCartSubject">
+        <h2>My Cart</h2>
+    </div>
+    <div class="printTable">
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Stock</th>
+                    <th>Total Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of currentTrolleyItems">
+                    <td>{{item.productName}}</td>
+                    <td>{{item.stock}}</td>
+                    <td>{{item.totalPrice}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="price">Total Cart: {{totalPriceCart | currency}}$</div>
+</div>
+
+<div class="row" *ngIf="printDisplay == false">
+
+    <div class="columnLeft">
+        <div class="firstSubColumn">
+            <div class="cartSubject">
+                <h2>My Cart</h2>
+            </div>
+            <div class="scrollList">
+                <app-trolley-item-card  *ngFor="let item of displayMySearch" [trolleyItem]="item"></app-trolley-item-card>
+            </div>
+            <div class="price">Total Cart: {{totalPriceCart | currency}}$</div>
+        </div>
+        <div class="secondSubColumn">
+            <button class="homeBtn" (click)="backToHomePage()">Back To Shop</button>
+        </div>
+    </div>
+
+    <div class="columnRight">
+        <div class="box">
+            <div class="orderSubject">
+                <h2>Order</h2>
+                <h3>Shopping details:</h3>
+            </div>
+            <div>
+                <form class="orderForm" (ngSubmit)="addOrder()" ngNativeValidate>
+                    <label>City: </label><br />
+                    <select name="cities" [(ngModel)]="orderData.deliveryCity" required
+                        (dblclick)="orderData.deliveryCity = userLoggedInCity">
+                        <option *ngIf="myCity == false" selected disabled value="Select city...">Select city...</option>
+                        <option *ngIf="myCity == true" selected value={{myCityId}}>{{userLoggedInCity}}</option>
+                        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+                    </select><br>
+                    <label>Street: </label><br />
+                    <input type="text" name="street" [(ngModel)]="orderData.deliveryStreet"
+                        (dblclick)="orderData.deliveryStreet = userLoggedInStreet" required minlength="3" maxlength="35"
+                        #deliveryStreet="ngModel" /><br />
+                    <label>Shipping Date: </label><br />
+                    <input type="date" name="street" [(ngModel)]="orderData.deliveryDate" required
+                        min="{{date | date:'yyyy-MM-dd'}}" #deliveryDate="ngModel" /><br /><br />
+                    <h3 class="paymentsSubject">Payments:</h3>
+                    <label>Credit Card: </label><br />
+                    <input type="text" name="creditCard" pattern="^[0-9]+" title="Only digits 8 to 16 characters long"
+                        [(ngModel)]="orderData.creditCard" required creditCard="ngModel" minlength="8"
+                        maxlength="16" /><br />
+                    <button>Order</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,8 @@
+<div *ngIf="trolleyItem.continueASentenceAfterFirstMarking == null" class="productName">{{trolleyItem.productName}}</div>
+<div *ngIf="trolleyItem.continueASentenceAfterFirstMarking != null"class="productName">{{trolleyItem.beginningOfASentence}}<mark>{{trolleyItem.firstLetterIsMarked}}</mark>{{trolleyItem.continueASentenceAfterFirstMarking}}<mark>{{trolleyItem?.secondLetterIsMarked}}</mark>{{trolleyItem?.continueASentenceAfterSecondMarking}}<mark>{{trolleyItem?.thirdLetterIsMarked}}</mark>{{trolleyItem?.continueASentenceAfterThirdMarking}}<mark>{{trolleyItem?.fourthLetterIsMarked}}</mark>{{trolleyItem?.continueASentenceAfterFourthMarking}}<mark>{{trolleyItem?.fifthLetterIsMarked}}</mark>{{trolleyItem?.continueASentenceAfterFifthMarking}}</div>
+<div class="box">
+    Stock: {{trolleyItem.stock}}<br />
+    Total Price: {{trolleyItem.totalPrice | currency}}
+    <img src={{imageSource}}><br />
+    <button *ngIf="page == 'home'" (click)="deleteTrolleyItem()">❌</button>
+</div>

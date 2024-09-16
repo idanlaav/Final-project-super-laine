@@ -1,0 +1,35 @@
+.box {
+    width: 240px;
+    max-width: 240px;
+    text-align: left;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 37px;
+    justify-content: space-between;
+}
+
+img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid black;
+    vertical-align: middle;
+}
+
+.productName {
+    text-align: center;
+    font-weight: bold;
+    color: burlywood;
+    margin-bottom: 10px;
+}
+
+button {
+    background: none;
+    color: inherit;
+    border: none;
+    padding: 0;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+}
+

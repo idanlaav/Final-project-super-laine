@@ -1,0 +1,51 @@
+<button class="logoutBtn" *ngIf="userId" (click)="logout()">👋🏻 Logout</button>
+
+<main>
+
+    <div class="loginBox">
+        <div class="divCart" *ngIf="NewOrOngoingPurchase != null">
+            <button class="redirectToAnotherPage" (click)="navigateToShoppingPage()">{{NewOrOngoingPurchase}}</button>
+        </div>
+        <form class="loginForm" (ngSubmit)="login()" *ngIf="!role" ngNativeValidate>
+            <h2>Login</h2>
+            <label>Email: </label><br />
+            <input type="email" name="email" pattern="^[a-z0-9._%+-.]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                title="characters@characters.(2-4)characters" [(ngModel)]="userLogin.email" required
+                #emailLogin="ngModel" /><br />
+            <label>Password: </label><br />
+            <input type="password" name="password" minlength="6" maxlength="20" [(ngModel)]="userLogin.password"
+                required #passwordLogin="ngModel" /><br />
+            <button>Login</button><br />
+        </form>
+        <div class="welcomeCss" *ngIf="role">
+            Hello {{userFullName}} 😊! <br /><br />
+            We are glad you came back to us.<br /><br />
+            We hope you enjoy it.
+        </div>
+        <p *ngIf="!role" class="moveToRegisterPage">New to Super-Laine ?<button class="removeCssButton" (click)="registerPage()">Register</button></p>
+    </div>
+    <div class="information">
+        <h4>Welcome to Super Line Online.</h4>
+        <p class="centered">In our supermarket you will find the highest quality products at the best price!</p>
+        <img src="../../../../assets/Super Market.jpeg">
+    </div>
+    <div class="basicData">
+        <img src="../../../../assets/Super Market another photo.jpeg">
+        <div>
+            Available products in our store - {{quantityOfProducts}}
+        </div>
+        <div>
+            We have received {{quantityOfOrders}} orders so far, we would be happy for you to be the
+            {{quantityOfOrders+1}}st purchase
+        </div>
+        <div class="notification" *ngIf="userId">
+            Notification:
+            <div *ngIf="NewOrOngoingPurchase == 'Resume Shopping'">You have open cart from {{productionDate}}</div>
+            <div *ngIf="NewOrOngoingPurchase == 'Start Shopping' && newMember == false">Your last purchase was on {{productionDate}}</div>
+            <div *ngIf="NewOrOngoingPurchase == 'Start Shopping' && newMember == true">Welcome to your first purchase</div>
+            <div *ngIf="userFullName != null">Welcome {{userFullName}}</div>
+
+        </div>
+    </div>
+
+</main>

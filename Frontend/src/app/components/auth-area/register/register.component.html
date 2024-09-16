@@ -1,0 +1,43 @@
+<form class="registerStepOneForm" (ngSubmit)="registerStepOne()" *ngIf="registerSteps == false" ngNativeValidate>
+    <h2>Register Step One</h2>
+    <label>Email: </label>
+    <input type="email" name="email" pattern="^[a-z0-9._%+-.]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+        title="characters@characters.(2-4)characters" [(ngModel)]="userRegister.email" required
+        #emailRegister="ngModel" />
+    <label>ID: </label>
+    <input type="text" name="id" pattern="^[0-9]+" title="Use only digits" [(ngModel)]="userRegister.id" required
+        #idRegister="ngModel" minlength="9" maxlength="9" />
+    <label>Password: </label>
+    <input type="password" name="password" [(ngModel)]="userRegister.password" required #passwordRegister="ngModel"
+        minlength="6" maxlength="20" />
+    <label>Password Confirm: </label>
+    <input type="password" name="passwordConfirm" [(ngModel)]="passwordConfirm" required minlength="6"
+        maxlength="20" /><br />
+    <button>Next</button><br />
+    <div class="warningValidate" *ngIf="passwordPermission == false">The passwords you entered do not match.</div>
+    <div class="warningValidate" *ngIf="emailPermission == false">The email you entered already exists in the system.</div>
+    <div class="warningValidate" *ngIf="idPermission == false">The ID you entered already exists in the system.</div>
+    <p>Already have an account ?<button class="removeCssButton" (click)="backToLoginPage()">Login</button></p>
+</form>
+
+<form class="registerStepTwoForm" (ngSubmit)="registerStepTwo()" *ngIf="registerSteps == true" ngNativeValidate>
+    <h2>Register Step Two</h2>
+    <label>First Name: </label>
+    <input type="text" name="firstName" pattern="^([a-z'A-Zא-ת]+).?(([a-z'A-Zא-ת]+){2,}\s?)?$" title="Minimum two characters and Maximum two words"
+        minlength="2" maxlength="15" [(ngModel)]="userRegister.firstName" required #firstNameRegister="ngModel" />
+    <label>Last Name: </label>
+    <input type="text" name="lastName" pattern="^^([a-z'A-Zא-ת]+).?(([a-z'A-Zא-ת]+){2,}\s?)?$" title="Minimum two characters and Maximum two words"
+        minlength="2" maxlength="25" [(ngModel)]="userRegister.lastName" required #lastNameRegister="ngModel" />
+    <label>City: </label>
+    <select name="cities" [(ngModel)]="userRegister.city" required>
+        <option selected disabled value="Select city...">Select city...</option>
+        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+    </select>
+    <label>Street: </label>
+    <input type="text" name="street" minlength="3" maxlength="35" [(ngModel)]="userRegister.street" required
+        #streetRegister="ngModel" /><br />
+    <button>Register</button><br />
+
+    <p>Already have an account ?<button class="removeCssButton" (click)="backToLoginPage()">Login</button></p>
+
+</form>

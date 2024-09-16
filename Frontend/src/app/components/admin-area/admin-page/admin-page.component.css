@@ -1,0 +1,184 @@
+.splitPage {
+    display: inline-flex;
+}
+
+div {
+    height: 100%;
+    width: 100%;
+    overflow: scroll;
+}
+
+.logoutBtn {
+    position: absolute;
+    top: 8%;
+    right: 0%;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+    color: brown;
+}
+
+.sidebarBtn {
+    position: fixed;
+    top: 6.6%;
+    left: 1%;
+    font-size: 5vh;
+    cursor: pointer;
+    background: none;
+    color: rgb(0, 0, 0);
+    border: none;
+}
+
+.sidebarClose {
+    height: 100%;
+    width: 0;
+    overflow-x: hidden;
+    transition: 0.3s;
+}
+
+.sidebarOpen {
+    height: 100%;
+    position: static;
+    z-index: 1;
+    background-color: rgb(189, 241, 243);
+    overflow-x: hidden;
+    transition: 0.5s;
+    width: 350px;
+}
+
+.ulWithSidebar {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+
+.ulWithoutSidebar {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    overflow: hidden;
+    margin: 0 2%;
+    margin-bottom: 8px;
+}
+
+li {
+    float: left;
+    padding-top: 5px;
+}
+
+li a {
+    display: flex;
+    justify-content: center;
+    color: brown;
+    text-align: center;
+    padding: 0px 18px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+li a:hover {
+    background-color: rgb(227, 164, 164);
+    border-radius: 30px;
+}
+
+h2 {
+    text-align: center;
+    color: brown;
+}
+
+.formProductCss {
+    max-height: 100%;
+    overflow: scroll;
+}
+
+input {
+    width: 180px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+select {
+    width: 190px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+.searchBox {
+    display: inline-block;
+    position: fixed;
+    top: 7.8%;
+    left: 7%;
+    width: 21%;
+    height: 2%;
+}
+
+.searchBtn {
+    display: inline-block;
+    margin-left: 5px;
+    color: brown;
+    font-size: 2vh;
+}
+
+.searchText {
+    border: 1.2px solid black;
+    color: brown;
+    width: 50%;
+    height: 100%;
+}
+
+.openFormToAddProductBtn {
+    position: fixed;
+    top: 7.3%;
+    left: 5.5%;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+    font-size: 4vh;
+    display: flex;
+}
+
+.addAndUpdateProductBtn {
+    text-align: center;
+    border-color: brown;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+    color: brown;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: underline;
+    margin-top: 10px;
+}
+
+form > img {
+    margin-top: 10px;
+    width: 35%;
+    height: auto;
+}
+
+
+span > input {
+    margin-top: 5px;
+    margin-left: 10%;
+}
+
+.warning {
+    color: red;
+    margin-bottom: 20px;
+}
+
+.welcomeAdmin {
+    color: red;
+    font-weight: bold;
+    font-size:small;
+}

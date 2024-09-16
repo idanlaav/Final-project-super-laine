@@ -1,0 +1,85 @@
+<button class="sidebarBtn" (click)="openAndCloseNav()">&#9776;</button>
+<span class="searchBox">
+    <input class="searchText" [(ngModel)]="searchValue" type="text" (change)="searchProducts($event)">
+    <button class="searchBtn" type="submit">Search</button>
+</span>
+<button class="logoutBtn" (click)="logout()">👋🏻 Logout</button>
+<button class="openFormToAddProductBtn" (click)="openFormToAddProduct()">➕</button>
+<div class="splitPage">
+
+    <div class={{sidebarCss}}>
+
+        <h2 *ngIf="formNewProduct == false && formUpdateProduct == false">Add and Edit Products</h2>
+        <h2 *ngIf="formNewProduct == true">Add New Product</h2>
+        <h2 *ngIf="formUpdateProduct == true">Update Product</h2>
+
+        <div class="formProductCss" *ngIf="formNewProduct == true">
+            <form (ngSubmit)="addProduct()" ngNativeValidate>
+                <label>Product Name: </label><br />
+                <input type="text" name="productName" minlength="2" maxlength="30"
+                    [(ngModel)]="newProductData.productName" required #productName="ngModel" /><br />
+                <label>Category Name: </label><br />
+                <select name="categories" [(ngModel)]="newProductData.categoryId" required>
+                    <option selected disabled value="Select Category...">Select Category...</option>
+                    <option *ngFor="let category of categories" [value]="category.categoryId">{{category.categoryName}}
+                    </option>
+                </select><br>
+                <label>Price: </label><br />
+                <input type="number" name="price" min="1" max="200" [(ngModel)]="newProductData.price"
+                    required #price="ngModel" /><br />
+                <label>Image: </label><br />
+                <span>
+                    <input type="file" accept="images/*" name="image" required #imageFile>
+                </span>
+                <button class="addAndUpdateProductBtn">Add Product</button><br />
+            </form>
+        </div>
+
+        <div class="formProductCss" *ngIf="formUpdateProduct == true">
+            <form (ngSubmit)="updateProduct()" ngNativeValidate>
+                <label>Product Name: </label><br />
+                <input type="text" name="updateProductName" minlength="2" maxlength="30"
+                    [(ngModel)]="productSelectedData.productName" #updateProductName="ngModel"
+                    [value]="productSelectedData.productName" /><br />
+                <span class="warning" *ngIf="productSelectedData.productName.length == 0">Missing Name<br /><br /></span>
+                <span class="warning" *ngIf="productSelectedData.productName.length < 2 && productSelectedData.productName.length != 0">Name too short<br /><br /></span>
+                <label>Category Name: </label><br />
+                <select name="categories" [(ngModel)]="productSelectedData.categoryId">
+                    <option selected disabled value="Select Category...">Select Category...</option>
+                    <option *ngFor="let category of categories" [value]="category.categoryId">{{category.categoryName}}
+                    </option>
+                </select><br>
+                <label>Price: </label><br />
+                <input type="number" name="price" step="0.01" min="1" max="200" [(ngModel)]="productSelectedData.price"
+                    #price="ngModel" /><br />
+                <span class="warning" *ngIf="productSelectedData.price < 1">Price can't be negative or less then 1.00$<br /><br /></span>
+                <span class="warning" *ngIf="productSelectedData.price > 200">The maximum price for this product is 200$<br /><br /></span>
+                <label>Image: </label><br />
+                <span>
+                    <input type="file" accept="images/*" name="image" #imageFile><br />
+                </span>
+                <label>Current Image:</label><br />
+                <img src={{imageSource}}><br />
+                <button class="addAndUpdateProductBtn" [disabled]="productSelectedData.productName == ''">Update Product</button><br />
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <span class="welcomeAdmin">Admin Page</span>
+        <ul class={{navLinkCss}}>
+            <li><a (click)="getAllFruitsAndVegetables()">Fruits and Vegetables</a></li>
+            <li><a (click)="getAllPastriesAndBreads()">Pastries and Breads</a></li>
+            <li><a (click)="getAllMeatAndChickenAndFish()">Meat, Chicken and Fish</a></li>
+            <li><a (click)="getAllDairyProductsAndEggs()">Dairy products and Eggs</a></li>
+            <li><a (click)="getAllDrinks()">Drinks</a></li>
+            <li><a (click)="getAllCleaningProducts()">Cleaning products</a></li>
+            <li><a (click)="getAllProductsFromAllCategories()">All Products</a></li>
+        </ul>
+        <div *ngIf="noProductsFound == 'no'">No Products Found By This Name</div>
+        <div *ngIf="noProductsFound != 'no'">
+            <app-product-card *ngFor="let result of displayUserSelect" [product]="result"></app-product-card>
+        </div>
+    </div>
+
+</div>

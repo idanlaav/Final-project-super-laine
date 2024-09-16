@@ -1,0 +1,166 @@
+.logo {
+    position: absolute;
+    top: 16px;
+    left: 20px;
+    width: 14%;
+    height: 9%;
+}
+
+main {
+    height: 100%;
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 33.3% 33.3% 33.4%;
+    text-align: center;
+    align-content: center;
+    overflow: scroll;
+    padding-top: 0px;
+}
+
+button {
+    margin: 10px;
+    color: black;
+    background-color: rgb(66, 169, 253);
+}
+
+.divCart {
+    width: 95%;
+    font-size: larger;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 30px;
+    border: 1px solid brown;
+    margin-top: -50px;
+}
+
+.information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 10px; 
+    border-radius: 30px;
+    color: rgb(14, 152, 237);
+    font-family: fantasy;
+    font-size: larger;
+    text-align: center
+}
+
+.centered {
+    padding-left: 0px;
+    text-align: center;
+}
+
+.moveToRegisterPage {
+    padding-left: 10px;
+}
+
+.information>img {
+    width: 95%;
+}
+
+.loginBox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    border-radius: 30px;
+    font-family: fantasy;
+}
+
+.basicData {
+    margin: 20px;
+    padding: 10px;
+    padding-top: 20px;
+    border-radius: 30px;
+    font-family: fantasy;
+    color: rgb(14, 152, 237);
+}
+
+.basicData>img {
+    width: 88%;
+    margin-top: 25px;
+    margin-bottom: 20px;
+}
+
+.basicData>div {
+    margin-bottom: 40px;
+}
+
+form>* {
+    margin: 10px;
+}
+
+h2 {
+    color: brown;
+    padding-bottom: 20px;
+}
+
+a {
+    color: blue;
+}
+
+.removeCssButton {
+    margin-left: 0px;
+    background: transparent;
+    color: #1100ff;
+    border: none;
+    font-size: medium;
+}
+
+.welcomeCss {
+    font-size: larger;
+    text-align: center;
+    margin-top: 65px;
+    color: rgb(14, 152, 237);
+    font-family: fantasy;
+}
+
+.redirectToAnotherPage {
+    background: none;
+    color: brown;
+    border: none;
+    padding: 5px;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    text-decoration: underline;
+}
+
+input {
+    width: 18vw;
+}
+
+.logoutBtn {
+    position: absolute;
+    top: 43px;
+    right: 0;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+    color: brown;
+}
+
+.warningValidate {
+    color: red;
+    font-size: small;
+}
+
+.welcomeMessage {
+    position: absolute;
+    top: 57px;
+    right: 100px;
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    background: none;
+}
+
+.notification {
+    color: rgb(197, 200, 7);
+}

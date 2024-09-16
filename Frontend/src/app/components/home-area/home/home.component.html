@@ -1,0 +1,41 @@
+<button class="sidebarBtn" (click)="openAndCloseNav()">&#9776;</button>
+<div class="searchBox">
+    <input class="searchText" type="text" (change)="searchProducts($event)">
+    <button class="searchBtn" type="submit">Search</button>
+</div>
+<button class="logoutBtn" (click)="logout()">👋🏻 Logout</button>
+
+
+<div class="splitPage">
+
+    <div class={{sidebarCss}}>
+        <h2>My Cart</h2>
+        <div class="cartCss" *ngIf="status == 'open' && currentTrolleyItems != 0">
+            <app-trolley-item-card *ngFor="let item of currentTrolleyItems" [trolleyItem]="item">
+            </app-trolley-item-card>
+        </div>
+        <div class="emptyCart" *ngIf="totalPriceCart == 0" style="text-align: center;">Your cart is empty</div>
+        <div class="footerCart">Total Cart: {{totalPriceCart | currency}}$<button class="deleteAllItems"
+                (click)="deleteAllItemsFromCart()">Reset Cart ❌</button> <button *ngIf="totalPriceCart != 0"
+                class="orderPageBtn" (click)="moveToOrderPage()">Order</button></div>
+    </div>
+
+    <div class="heightCheck">
+        <ul class={{navLinkCss}}>
+            <li><a (click)="getAllFruitsAndVegetables()">Fruits and Vegetables</a></li>
+            <li><a (click)="getAllPastriesAndBreads()">Pastries and Breads</a></li>
+            <li><a (click)="getAllMeatAndChickenAndFish()">Meat, Chicken and Fish</a></li>
+            <li><a (click)="getAllDairyProductsAndEggs()">Dairy products and Eggs</a></li>
+            <li><a (click)="getAllDrinks()">Drinks</a></li>
+            <li><a (click)="getAllCleaningProducts()">Cleaning products</a></li>
+            <li><a (click)="getAllProductsFromAllCategories()">All Products</a></li>
+        </ul>
+        <div class="productsCenter">
+            <div *ngIf="noProductsFound == 'no'">No Products Found By This Name</div>
+            <div *ngIf="noProductsFound != 'no'">
+                <app-product-card *ngFor="let result of displayUserSelect" [product]="result"></app-product-card>
+            </div>
+        </div>
+    </div>
+
+</div>
